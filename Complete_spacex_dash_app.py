@@ -61,7 +61,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
               Input(component_id='site-dropdown', component_property='value'))
 def get_pie(entered_site):
     filtered_df = spacex_df
-    if entered_site == 'All':
+    if entered_site == 'ALL':
         filtered_df = spacex_df.groupby('Launch Site').sum().reset_index()
         fig = px.pie(filtered_df, names='class', title='Total success launches for all sites')
     else:
